@@ -12,12 +12,10 @@ services:
   - docker
 
 jdk:
- - oraclejdk7
+ - oraclejdk8
 
-# don't do anything on install, just let maven install the dependencies in the script
-# Also see https://github.com/eclipse/january/issues/109
 install:
-  - true
+  - cd $HOME && rm -rf JanuaryTests && git clone https://github.com/jonahkichwacoders/JanuaryTests.git && cd -
   
 # verify does everything, including tests, but excludes the install step
 script: 
