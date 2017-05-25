@@ -36,9 +36,7 @@ import org.osgi.framework.BundleException;
 public class IJAXBClassProviderTester {
 
 	/**
-	 * Test for
-	 * {@link org.eclipse.january.form.IJAXBClassProvider}
-	 * .
+	 * Test for {@link org.eclipse.january.form.IJAXBClassProvider} .
 	 *
 	 * @throws CoreException
 	 * @throws BundleException
@@ -53,7 +51,7 @@ public class IJAXBClassProviderTester {
 			ClassNotFoundException, URISyntaxException, FileNotFoundException {
 
 		IJAXBClassProvider[] jaxbProviders = null;
-		String id = "org.eclipse.ice.datastructures.jaxbClassProvider";
+		String id = "org.eclipse.january.datastructures.jaxbClassProvider";
 		IExtensionPoint point = Platform.getExtensionRegistry()
 				.getExtensionPoint(id);
 

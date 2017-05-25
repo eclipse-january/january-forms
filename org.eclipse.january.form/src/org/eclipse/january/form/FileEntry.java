@@ -90,7 +90,7 @@ public class FileEntry extends DiscreteEntry
 	 */
 	public FileEntry(String... files) {
 		super(files);
-		contextId = "org.eclipse.ice.client.widgets.FileEntry";
+		contextId = "org.eclipse.january.client.widgets.FileEntry";
 	}
 
 	/*
