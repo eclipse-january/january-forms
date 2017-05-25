@@ -28,8 +28,8 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * <p>
- * The Resource class represents persistent data resources used by January and the
- * other software packages with which it interacts. This includes files
+ * The Resource class represents persistent data resources used by January and
+ * the other software packages with which it interacts. This includes files
  * containing simulation input and output data, movies and plots, amongst
  * others.
  * </p>
@@ -64,13 +64,13 @@ public class JanuaryResource extends JanuaryObject {
 	 * 
 	 */
 	@XmlElementWrapper
-	@XmlAnyElement(lax=true)
+	@XmlAnyElement(lax = true)
 	private ArrayList<IEntry> properties;
 
 	/**
 	 * <p>
-	 * An attribute that determines if JanuaryResouce is a picture or not. Can be
-	 * set multiple times.
+	 * An attribute that determines if JanuaryResouce is a picture or not. Can
+	 * be set multiple times.
 	 * </p>
 	 * 
 	 */
@@ -136,12 +136,15 @@ public class JanuaryResource extends JanuaryObject {
 
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * <p>
+	 * This operation returns the last modification date of the file.
+	 * </p>
 	 * 
-	 * @see
-	 * org.eclipse.ice.datastructures.resource.IResource#getLastModificationDate
-	 * ()
+	 * @return
+	 *         <p>
+	 *         The date.
+	 *         </p>
 	 */
 	public String getLastModificationDate() {
 
@@ -158,20 +161,31 @@ public class JanuaryResource extends JanuaryObject {
 		return retVal;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * <p>
+	 * This operations returns the contents of the Resource as an instance of
+	 * File.
+	 * </p>
 	 * 
-	 * @see org.eclipse.ice.datastructures.resource.IResource#getContents()
+	 * @return
+	 *         <p>
+	 *         The file.
+	 *         </p>
 	 */
 	public File getContents() {
 
 		return file;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * <p>
+	 * This operation returns the URI to the Resource.
+	 * </p>
 	 * 
-	 * @see org.eclipse.ice.datastructures.resource.IResource#getPath()
+	 * @return
+	 *         <p>
+	 *         The path as a URL.
+	 *         </p>
 	 */
 	public URI getPath() {
 		if (this.file != null) {
@@ -180,11 +194,13 @@ public class JanuaryResource extends JanuaryObject {
 		return path;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * <p>
+	 * This operation sets the path to the Resource and is an alternative to
+	 * setContents(). It will reset the File handle if it is different.
+	 * </p>
 	 * 
-	 * @see
-	 * org.eclipse.ice.datastructures.resource.IResource#setPath(java.net.URI)
+	 * @param path
 	 */
 	public void setPath(URI path) {
 
@@ -202,22 +218,34 @@ public class JanuaryResource extends JanuaryObject {
 
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * <p>
+	 * This operation associates a set of Entries with the resource that
+	 * describe specific properties. The list of Entries is returned by
+	 * reference and is not a deep copy, i.e. - changing one will change it on
+	 * the resource.
+	 * </p>
 	 * 
-	 * @see org.eclipse.ice.datastructures.resource.IResource#getProperties()
+	 * @return
+	 *         <p>
+	 *         The properties or null if there are no properties.
+	 *         </p>
 	 */
 	public ArrayList<IEntry> getProperties() {
 
 		return this.properties;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * <p>
+	 * This operation returns the set of Entries that describe specific
+	 * properties of the resource. The properties can be set multiple times.
+	 * </p>
 	 * 
-	 * @see
-	 * org.eclipse.ice.datastructures.resource.IResource#setProperties(java.util
-	 * .ArrayList)
+	 * @param props
+	 *            <p>
+	 *            The properties.
+	 *            </p>
 	 */
 	public void setProperties(ArrayList<IEntry> props) {
 		// If null return
@@ -229,20 +257,30 @@ public class JanuaryResource extends JanuaryObject {
 
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * <p>
+	 * This operation returns true if the ICEResource is an image and false if
+	 * not based upon the isPicture attribute.
+	 * </p>
 	 * 
-	 * @see org.eclipse.ice.datastructures.resource.IResource#isPictureType()
+	 * @return
+	 *         <p>
+	 *         True if this is a picture, false otherwise.
+	 *         </p>
 	 */
 	public boolean isPictureType() {
 		return this.isPicture;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * <p>
+	 * An operation that sets the isPicture attribute on ICEResource.
+	 * </p>
 	 * 
-	 * @see
-	 * org.eclipse.ice.datastructures.resource.IResource#setPictureType(boolean)
+	 * @param isPicture
+	 *            <p>
+	 *            Determines if ICEResource is a picture.
+	 *            </p>
 	 */
 	@XmlTransient
 	public void setPictureType(boolean isPicture) {
@@ -250,12 +288,12 @@ public class JanuaryResource extends JanuaryObject {
 
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * This operation performs a deep copy of the attributes of another
+	 * ICEResource into the current ICEResource.
 	 * 
-	 * @see
-	 * org.eclipse.ice.datastructures.resource.IResource#copy(org.eclipse.ice.
-	 * datastructures.resource.JanuaryResource)
+	 * @param otherResource
+	 *            The other ICEResource from which information should be copied.
 	 */
 	public void copy(JanuaryResource otherResource) {
 
@@ -301,12 +339,12 @@ public class JanuaryResource extends JanuaryObject {
 
 	/**
 	 * This operation is used to check equality between the JanuaryResource and
-	 * another JanuaryResource. It returns true if the JanuaryResources are equal and
-	 * false if they are not.
+	 * another JanuaryResource. It returns true if the JanuaryResources are
+	 * equal and false if they are not.
 	 * 
 	 * @param otherJanuaryResource
-	 *            The other JanuaryResource to which this JanuaryResource should be
-	 *            compared.
+	 *            The other JanuaryResource to which this JanuaryResource should
+	 *            be compared.
 	 * @return True if the JanuaryResources are equal, false otherwise.
 	 */
 	@Override
@@ -369,12 +407,19 @@ public class JanuaryResource extends JanuaryObject {
 
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * <p>
+	 * This operation sets the File which the Resource represents. The default
+	 * values of the name, id and description for this class are the filename, 1
+	 * and the absolute path, respectively.
+	 * </p>
 	 * 
-	 * @see
-	 * org.eclipse.ice.datastructures.resource.IResource#setContents(java.io.
-	 * File)
+	 * @param resourceFile
+	 *            <p>
+	 *            The file that the Resource should be created to represent.
+	 *            </p>
+	 * @throws IOException
+	 * @throws NullPointerException
 	 */
 	@XmlTransient
 	public void setContents(File resourceFile)

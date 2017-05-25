@@ -37,7 +37,7 @@ public class BasicGeometryImporterServiceFactory
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.eclipse.eavp.viz.service.geometry.importers.
+	 * @see org.eclipse.january.geometry.model.importer.
 	 * IGeometryImporterServiceFactory#get(java.lang.String)
 	 */
 	@Override
@@ -48,7 +48,7 @@ public class BasicGeometryImporterServiceFactory
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.eclipse.eavp.viz.service.geometry.importers.
+	 * @see org.eclipse.january.geometry.model.importer.
 	 * IGeometryImporterServiceFactory#getAll()
 	 */
 	@Override
@@ -59,9 +59,9 @@ public class BasicGeometryImporterServiceFactory
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.eclipse.eavp.viz.service.geometry.importers.
-	 * IGeometryImporterServiceFactory#register(org.eclipse.eavp.viz.service.
-	 * geometry.importers.IGeometryImporterService)
+	 * @see org.eclipse.january.geometry.model.importer.
+	 * IGeometryImporterServiceFactory#register(org.eclipse.january.geometry.
+	 * model.importer.IGeometryImporterService)
 	 */
 	@Override
 	public void register(IGeometryImporterService service) {
@@ -81,9 +81,9 @@ public class BasicGeometryImporterServiceFactory
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.eclipse.eavp.viz.service.geometry.importers.
-	 * IGeometryImporterServiceFactory#unregister(org.eclipse.eavp.viz.service.
-	 * geometry.importers.IGeometryImporterService)
+	 * @see org.eclipse.january.geometry.model.importer.
+	 * IGeometryImporterServiceFactory#unregister(org.eclipse.january.geometry.
+	 * model.importer.IGeometryImporterService)
 	 */
 	@Override
 	public void unregister(IGeometryImporterService service) {

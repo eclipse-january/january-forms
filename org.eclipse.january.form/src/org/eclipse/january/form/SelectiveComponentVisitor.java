@@ -15,9 +15,6 @@
  *******************************************************************************/
 package org.eclipse.january.form;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.eclipse.january.form.emf.EMFComponent;
 
 /**
@@ -55,8 +52,8 @@ public abstract class SelectiveComponentVisitor implements IComponentVisitor {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.ice.datastructures.componentVisitor.IComponentVisitor#visit
-	 * (org.eclipse.ice.datastructures.form.DataComponent)
+	 * org.eclipse.january.form.IComponentVisitor#visit(org.eclipse.january.form
+	 * .DataComponent)
 	 */
 	@Override
 	public void visit(DataComponent component) {
@@ -67,8 +64,8 @@ public abstract class SelectiveComponentVisitor implements IComponentVisitor {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.ice.datastructures.componentVisitor.IComponentVisitor#visit
-	 * (org.eclipse.ice.datastructures.form.ResourceComponent)
+	 * org.eclipse.january.form.IComponentVisitor#visit(org.eclipse.january.form
+	 * .ResourceComponent)
 	 */
 	@Override
 	public void visit(ResourceComponent component) {
@@ -79,8 +76,8 @@ public abstract class SelectiveComponentVisitor implements IComponentVisitor {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.ice.datastructures.componentVisitor.IComponentVisitor#visit
-	 * (org.eclipse.ice.datastructures.form.TableComponent)
+	 * org.eclipse.january.form.IComponentVisitor#visit(org.eclipse.january.form
+	 * .TableComponent)
 	 */
 	@Override
 	public void visit(TableComponent component) {
@@ -91,8 +88,8 @@ public abstract class SelectiveComponentVisitor implements IComponentVisitor {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.ice.datastructures.componentVisitor.IComponentVisitor#visit
-	 * (org.eclipse.ice.datastructures.form.MatrixComponent)
+	 * org.eclipse.january.form.IComponentVisitor#visit(org.eclipse.january.form
+	 * .MatrixComponent)
 	 */
 	@Override
 	public void visit(MatrixComponent component) {
@@ -103,8 +100,8 @@ public abstract class SelectiveComponentVisitor implements IComponentVisitor {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.ice.datastructures.componentVisitor.IComponentVisitor#visit
-	 * (org.eclipse.ice.datastructures.form.geometry.GeometryComponent)
+	 * org.eclipse.january.form.IComponentVisitor#visit(org.eclipse.january.form
+	 * .GeometryComponent)
 	 */
 	@Override
 	public void visit(GeometryComponent component) {
@@ -115,8 +112,8 @@ public abstract class SelectiveComponentVisitor implements IComponentVisitor {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.ice.datastructures.componentVisitor.IComponentVisitor#visit
-	 * (org.eclipse.ice.datastructures.form.MasterDetailsComponent)
+	 * org.eclipse.january.form.IComponentVisitor#visit(org.eclipse.january.form
+	 * .MasterDetailsComponent)
 	 */
 	@Override
 	public void visit(MasterDetailsComponent component) {
@@ -127,8 +124,8 @@ public abstract class SelectiveComponentVisitor implements IComponentVisitor {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.ice.datastructures.componentVisitor.IComponentVisitor#visit
-	 * (org.eclipse.ice.datastructures.form.TreeComposite)
+	 * org.eclipse.january.form.IComponentVisitor#visit(org.eclipse.january.form
+	 * .TreeComposite)
 	 */
 	@Override
 	public void visit(TreeComposite component) {
@@ -139,8 +136,8 @@ public abstract class SelectiveComponentVisitor implements IComponentVisitor {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.ice.datastructures.componentVisitor.IComponentVisitor#visit
-	 * (org.eclipse.ice.datastructures.form.AdaptiveTreeComposite)
+	 * org.eclipse.january.form.IComponentVisitor#visit(org.eclipse.january.form
+	 * .AdaptiveTreeComposite)
 	 */
 	@Override
 	public void visit(AdaptiveTreeComposite component) {
@@ -151,8 +148,8 @@ public abstract class SelectiveComponentVisitor implements IComponentVisitor {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.ice.datastructures.componentVisitor.IComponentVisitor#visit
-	 * (org.eclipse.ice.datastructures.componentVisitor.IReactorComponent)
+	 * org.eclipse.january.form.IComponentVisitor#visit(org.eclipse.january.form
+	 * .IReactorComponent)
 	 */
 	@Override
 	public void visit(IReactorComponent component) {
@@ -163,8 +160,8 @@ public abstract class SelectiveComponentVisitor implements IComponentVisitor {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.ice.datastructures.componentVisitor.IComponentVisitor#visit
-	 * (org.eclipse.ice.datastructures.form.TimeDataComponent)
+	 * org.eclipse.january.form.IComponentVisitor#visit(org.eclipse.january.form
+	 * .TimeDataComponent)
 	 */
 	@Override
 	public void visit(TimeDataComponent component) {
@@ -175,8 +172,8 @@ public abstract class SelectiveComponentVisitor implements IComponentVisitor {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.ice.datastructures.componentVisitor.IComponentVisitor#visit
-	 * (org.eclipse.ice.datastructures.form.BatteryComponent)
+	 * org.eclipse.january.form.IComponentVisitor#visit(org.eclipse.january.form
+	 * .emf.EMFComponent)
 	 */
 	@Override
 	public void visit(EMFComponent component) {
@@ -187,8 +184,8 @@ public abstract class SelectiveComponentVisitor implements IComponentVisitor {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.ice.datastructures.componentVisitor.IComponentVisitor#visit(
-	 * org.eclipse.ice.datastructures.JanuaryObject.ListComponent)
+	 * org.eclipse.january.form.IComponentVisitor#visit(org.eclipse.january.form
+	 * .ListComponent)
 	 */
 	@Override
 	public void visit(ListComponent<?> component) {

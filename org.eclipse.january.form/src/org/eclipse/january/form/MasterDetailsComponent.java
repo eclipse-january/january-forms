@@ -56,9 +56,9 @@ import javax.xml.bind.annotation.XmlRootElement;
  * three ways: by the name, id or reference to the master itself.
  * </p>
  * <p>
- * The MasterDetailsComponent is an JanuaryObject and is both uniquely identifiable
- * and persistent to either XML or SQL. It implements the Component interface
- * and can be visited and observed.
+ * The MasterDetailsComponent is an JanuaryObject and is both uniquely
+ * identifiable and persistent to either XML or SQL. It implements the Component
+ * interface and can be visited and observed.
  * </p>
  * <p>
  * The MasterDetailsComponent can be configured with a "header component." The
@@ -66,8 +66,8 @@ import javax.xml.bind.annotation.XmlRootElement;
  * master-details pairs globally. For example, in the January MultiLauncher the
  * header contains an Entry to determine whether or not the jobs should be
  * launched sequentially or in parallel. This header is retrieved and set by
- * calling get/setGlobalsComponent and it is referred to interchangeably as
- * "the header" or "the globals" component.
+ * calling get/setGlobalsComponent and it is referred to interchangeably as "the
+ * header" or "the globals" component.
  * </p>
  * <p>
  * It is possible to generate a unique value for a particular master by calling
@@ -208,8 +208,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 			// the templatelist has not been set, everything is okay.
 			// Otherwise, return.
 			if (!(!masterTypeList.isEmpty() && !detailList.isEmpty()
-					&& (masterTypeList.size() == detailList.size()) && this.masterDetailsTemplateList
-						.isEmpty())) {
+					&& (masterTypeList.size() == detailList.size())
+					&& this.masterDetailsTemplateList.isEmpty())) {
 				return;
 			}
 		}
@@ -289,7 +289,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 	 *            <p>
 	 *            The id of the master whose details should be retrieved.
 	 *            </p>
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The details block for the master with the specified id.
 	 *         </p>
 	 */
@@ -298,14 +299,16 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 		// Return if the masterDetailsTemplateList is not set.
 		// Also check if the masterId < 0 || masterId > this.counter
 		// Faster boolean operations.
-		if (!(!this.masterDetailsTemplateList.isEmpty() && (masterId >= 0) && (masterId < this.counter))) {
+		if (!(!this.masterDetailsTemplateList.isEmpty() && (masterId >= 0)
+				&& (masterId < this.counter))) {
 			return null;
 		}
 
 		// Search to see if the id exists
 		for (int i = 0; i < this.masterDetailsPairs.size(); i++) {
 			// If the id is found, return the DataComponent
-			if (this.masterDetailsPairs.get(i).getMasterDetailsPairId() == masterId) {
+			if (this.masterDetailsPairs.get(i)
+					.getMasterDetailsPairId() == masterId) {
 				return this.masterDetailsPairs.get(i).getDetails();
 			}
 		}
@@ -323,7 +326,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 	 * the master may be retrieved later by calling getMaster().
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The id of the new master instance.
 	 *         </p>
 	 */
@@ -371,7 +375,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 	 *            <p>
 	 *            The id of the master that should be deleted.
 	 *            </p>
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         True if the master was deleted, false otherwise.
 	 *         </p>
 	 */
@@ -410,7 +415,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 	 *            <p>
 	 *            The id of the master that should be retrieved.
 	 *            </p>
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The value of the instance of the master with the given id.
 	 *         </p>
 	 */
@@ -454,7 +460,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 	 *            <p>
 	 *            The new value of the master.
 	 *            </p>
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         True if setting the value was successful, false otherwise.
 	 *         </p>
 	 */
@@ -484,7 +491,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 			if (this.masterDetailsPairs.get(i).getMasterDetailsPairId() == id) {
 				// Set the DataComponent
 				// Get the DataComponent to copy
-				for (int j = 0; j < this.masterDetailsTemplateList.size(); j++) {
+				for (int j = 0; j < this.masterDetailsTemplateList
+						.size(); j++) {
 					if (this.masterDetailsTemplateList.get(j).getMaster()
 							.equals(value)) {
 						// Clone another dataComponent
@@ -527,7 +535,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 	 * masters when setMasterInstanceValue() is called.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The list of values that may be assigned to masters.
 	 *         </p>
 	 */
@@ -560,7 +569,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 	 *            The other MasterDetailsComponent to which this component
 	 *            should be compared.
 	 *            </p>
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         True if the MasterDetailsComponents are equal, false otherwise.
 	 *         </p>
 	 */
@@ -614,7 +624,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 	 * This operation returns the hashcode value of the MasterDetailsComponent.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The hashcode.
 	 *         </p>
 	 */
@@ -627,19 +638,13 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 		hash = 31 * hash + super.hashCode();
 
 		// Compute attributes
-		hash = 31
-				* hash
-				+ (null == this.allowedMasters ? 0 : this.allowedMasters
-						.hashCode());
+		hash = 31 * hash + (null == this.allowedMasters ? 0
+				: this.allowedMasters.hashCode());
 		hash = 31 * hash + (null == this.counter ? 0 : this.counter.hashCode());
-		hash = 31
-				* hash
-				+ (null == this.masterDetailsPairs ? 0
-						: this.masterDetailsPairs.hashCode());
-		hash = 31
-				* hash
-				+ (null == this.masterDetailsTemplateList ? 0
-						: this.masterDetailsTemplateList.hashCode());
+		hash = 31 * hash + (null == this.masterDetailsPairs ? 0
+				: this.masterDetailsPairs.hashCode());
+		hash = 31 * hash + (null == this.masterDetailsTemplateList ? 0
+				: this.masterDetailsTemplateList.hashCode());
 		hash = 31 * hash + (null == this.globals ? 0 : this.globals.hashCode());
 
 		return hash;
@@ -671,17 +676,18 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 
 		// Copy allowedMasters
 		this.allowedMasters.clear();
-		for (int i = 0; i < otherMasterDetailsComponent.allowedMasters.size(); i++) {
-			this.allowedMasters.add(otherMasterDetailsComponent.allowedMasters
-					.get(i));
+		for (int i = 0; i < otherMasterDetailsComponent.allowedMasters
+				.size(); i++) {
+			this.allowedMasters
+					.add(otherMasterDetailsComponent.allowedMasters.get(i));
 		}
 
 		// Copy MasterDetailsPairs
 		this.masterDetailsPairs.clear();
 		for (int i = 0; i < otherMasterDetailsComponent.masterDetailsPairs
 				.size(); i++) {
-			this.masterDetailsPairs
-					.add((MasterDetailsPair) otherMasterDetailsComponent.masterDetailsPairs
+			this.masterDetailsPairs.add(
+					(MasterDetailsPair) otherMasterDetailsComponent.masterDetailsPairs
 							.get(i).clone());
 		}
 
@@ -689,8 +695,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 		this.masterDetailsTemplateList.clear();
 		for (int i = 0; i < otherMasterDetailsComponent.masterDetailsTemplateList
 				.size(); i++) {
-			this.masterDetailsTemplateList
-					.add((MasterDetailsPair) otherMasterDetailsComponent.masterDetailsTemplateList
+			this.masterDetailsTemplateList.add(
+					(MasterDetailsPair) otherMasterDetailsComponent.masterDetailsTemplateList
 							.get(i).clone());
 		}
 
@@ -713,7 +719,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 	 * This operation provides a deep copy of the MasterDetailsComponent.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The deep-copy clone of this MasterDetailsComponent.
 	 *         </p>
 	 */
@@ -747,7 +754,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 	 * Returns the number of MasterDetailsPairs in masterDetailsPairs list.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         Number of masters.
 	 *         </p>
 	 */
@@ -761,7 +769,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 	 * been set. This should be reviewed by clients if it is not null.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         A returned DataComponent globals value.
 	 *         </p>
 	 */
@@ -799,7 +808,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 	 *            <p>
 	 *            List index.
 	 *            </p>
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         A string value in masterDetailsPairs list.
 	 *         </p>
 	 */
@@ -825,7 +835,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 	 *            <p>
 	 *            The index in the list.
 	 *            </p>
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The returned DataComponent.
 	 *         </p>
 	 */
@@ -850,7 +861,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 	 *            <p>
 	 *            The unique masterDetailsPairId.
 	 *            </p>
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The unique master value, equal to 'id + " " + value'.
 	 *         </p>
 	 */
@@ -884,7 +896,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 	 *            <p>
 	 *            The index in the list.
 	 *            </p>
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The unique master value, equal to 'id + " " + value'.
 	 *         </p>
 	 */
@@ -910,7 +923,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 	 *            <p>
 	 *            The index to be deleted.
 	 *            </p>
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         Status of deletion.
 	 *         </p>
 	 */
@@ -934,7 +948,8 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 	 * If false, the buttons should be disabled.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The status
 	 *         </p>
 	 */
@@ -962,7 +977,9 @@ public class MasterDetailsComponent extends JanuaryObject implements Component {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.JanuaryObject.JanuaryObject#update(java.lang.String, java.lang.String)
+	 * 
+	 * @see org.eclipse.january.form.JanuaryObject#update(java.lang.String,
+	 * java.lang.String)
 	 */
 	@Override
 	public void update(String updatedKey, String newValue) {

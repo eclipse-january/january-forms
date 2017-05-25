@@ -43,6 +43,6 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>releng/org.eclipse.january.releng</module>
+		<module>releng/org.eclipse.january.forms.releng</module>
 	</modules>
 </project>

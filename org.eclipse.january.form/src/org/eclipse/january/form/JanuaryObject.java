@@ -16,31 +16,30 @@ import java.util.ArrayList;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlTransient;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * JanuaryObject is the base class for all common, shared data structures in January
- * with the notable exception of the JanuaryList. JanuaryObjects are uniquely
- * identifiable by their identification numbers and are persistent; it realizes
- * both the Identifiable and Persistable interfaces. JanuaryObject implements
- * clone() for creating deep copies and also provides a public copy operation to
- * copy into an existing JanuaryObject. JanuaryObjects can be marshalled and
- * unmarshalled to XML using the loadFromXML() and persistToXML() operations
- * from the Persistable interface.
+ * JanuaryObject is the base class for all common, shared data structures in
+ * January with the notable exception of the JanuaryList. JanuaryObjects are
+ * uniquely identifiable by their identification numbers and are persistent; it
+ * realizes both the Identifiable and Persistable interfaces. JanuaryObject
+ * implements clone() for creating deep copies and also provides a public copy
+ * operation to copy into an existing JanuaryObject. JanuaryObjects can be
+ * marshalled and unmarshalled to XML using the loadFromXML() and persistToXML()
+ * operations from the Persistable interface.
  * <p>
  * Operations are defined for most of the attributes and capabilities of the
  * JanuaryObject class, but some work is required by subclasses. Subclasses must
- * override clone() if they extend JanuaryObject by adding attributes or the deep
- * copy will fail. They should provide a custom implementation of copy() that is
- * specific to their own type to do a deep copy (i.e. copy(a:myType) instead of
- * copy(a:JanuaryObject)) since JanuaryObject.copy() will only copy the attributes of
- * JanuaryObjects. They must also override the loadFromXML() operation to copy the
- * XML data properly from the XMLLoader (because January uses JAXB to bind XML to
- * JanuaryObjects and its subclasses).
+ * override clone() if they extend JanuaryObject by adding attributes or the
+ * deep copy will fail. They should provide a custom implementation of copy()
+ * that is specific to their own type to do a deep copy (i.e. copy(a:myType)
+ * instead of copy(a:JanuaryObject)) since JanuaryObject.copy() will only copy
+ * the attributes of JanuaryObjects. They must also override the loadFromXML()
+ * operation to copy the XML data properly from the XMLLoader (because January
+ * uses JAXB to bind XML to JanuaryObjects and its subclasses).
  * </p>
  * <p>
  * JanuaryObjects implement IUpdateable. The base class manages registering,
@@ -61,9 +60,9 @@ public class JanuaryObject implements IUpdateable {
 
 	/**
 	 * The context for this object. It should be used as described on
-	 * {@link org.eclipse.january.form.Identifiable}. It is not
-	 * persisted to XML because it only matters during runtime. It's default
-	 * value is "january-default."
+	 * {@link org.eclipse.january.form.Identifiable}. It is not persisted to XML
+	 * because it only matters during runtime. It's default value is
+	 * "january-default."
 	 */
 	@XmlTransient
 	protected String context = "january-default";
@@ -79,9 +78,9 @@ public class JanuaryObject implements IUpdateable {
 	protected String objectName;
 
 	/**
-	 * The description of the JanuaryObject. This description should be different
-	 * than the name of the JanuaryObject and should contain information that would
-	 * be useful to a human user.
+	 * The description of the JanuaryObject. This description should be
+	 * different than the name of the JanuaryObject and should contain
+	 * information that would be useful to a human user.
 	 */
 	protected String objectDescription;
 
@@ -218,8 +217,8 @@ public class JanuaryObject implements IUpdateable {
 	}
 
 	/**
-	 * This protected operation notifies the listeners of the JanuaryObject that its
-	 * state has changed.
+	 * This protected operation notifies the listeners of the JanuaryObject that
+	 * its state has changed.
 	 */
 	protected void notifyListeners() {
 
@@ -365,7 +364,7 @@ public class JanuaryObject implements IUpdateable {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.eclipse.ice.datastructures.JanuaryObject.Identifiable#getContext()
+	 * @see org.eclipse.january.form.Identifiable#getContext()
 	 */
 	@Override
 	public String getContext() {
@@ -375,9 +374,7 @@ public class JanuaryObject implements IUpdateable {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see
-	 * org.eclipse.ice.datastructures.JanuaryObject.Identifiable#setContext(java.
-	 * lang.String)
+	 * @see org.eclipse.january.form.Identifiable#setContext(java.lang.String)
 	 */
 	@Override
 	public void setContext(String context) {

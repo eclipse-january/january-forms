@@ -40,7 +40,7 @@ public class ExecutableEntry extends DiscreteEntry {
 	private URI executableUri;
 
 	/**
-	 * A mapping holding allowed values to their URI counterparts. 
+	 * A mapping holding allowed values to their URI counterparts.
 	 */
 	private HashMap<String, URI> allowedValueToURI;
 
@@ -51,9 +51,9 @@ public class ExecutableEntry extends DiscreteEntry {
 		super();
 		allowedValueToURI = new HashMap<String, URI>();
 	}
-	
+
 	/**
-	 * The constructor for discrete allowed values. 
+	 * The constructor for discrete allowed values.
 	 * 
 	 * @param allowed
 	 */
@@ -64,12 +64,14 @@ public class ExecutableEntry extends DiscreteEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.DiscreteEntry#setValue(java.lang.String[])
+	 * 
+	 * @see org.eclipse.january.form.DiscreteEntry#setValue(java.lang.String[])
 	 */
 	@Override
 	public boolean setValue(String... newValues) {
 		URI uri = null;
-		if (newValues.length == 2 && (uri = URI.create(newValues[1])) != null && setValue(newValues[0])) {
+		if (newValues.length == 2 && (uri = URI.create(newValues[1])) != null
+				&& setValue(newValues[0])) {
 			allowedValueToURI.put(value, uri);
 			executableUri = uri;
 			return true;
@@ -79,7 +81,8 @@ public class ExecutableEntry extends DiscreteEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.DiscreteEntry#setValue(java.lang.String)
+	 * 
+	 * @see org.eclipse.january.form.DiscreteEntry#setValue(java.lang.String)
 	 */
 	@Override
 	public boolean setValue(String newValue) {
@@ -87,12 +90,13 @@ public class ExecutableEntry extends DiscreteEntry {
 			executableUri = allowedValueToURI.get(newValue);
 			return true;
 		}
-		
+
 		return false;
 	}
-	
+
 	/**
-	 * Return the URI for the current application. 
+	 * Return the URI for the current application.
+	 * 
 	 * @return
 	 */
 	public URI getExecutableURI() {
@@ -100,9 +104,9 @@ public class ExecutableEntry extends DiscreteEntry {
 	}
 
 	/**
-	 * This operations persists the ExecutableEntry to Eclipse Preferences. 
-	 * It constructs the key as the URI.toString and the value as the name 
-	 * of the corresponding executable. 
+	 * This operations persists the ExecutableEntry to Eclipse Preferences. It
+	 * constructs the key as the URI.toString and the value as the name of the
+	 * corresponding executable.
 	 * 
 	 * @param prefId
 	 */
@@ -120,7 +124,8 @@ public class ExecutableEntry extends DiscreteEntry {
 	}
 
 	/**
-	 * This operation loads the ExecutableEntry from Eclipse Preferences. 
+	 * This operation loads the ExecutableEntry from Eclipse Preferences.
+	 * 
 	 * @param prefId
 	 */
 	public void loadFromPreferences(String prefId) {
@@ -146,11 +151,11 @@ public class ExecutableEntry extends DiscreteEntry {
 			setDefaultValue(allowedValues.get(0));
 		}
 	}
-	
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.DiscreteEntry#clone()
+	 * 
+	 * @see org.eclipse.january.form.DiscreteEntry#clone()
 	 */
 	@Override
 	public Object clone() {
@@ -158,12 +163,12 @@ public class ExecutableEntry extends DiscreteEntry {
 		entry.copy(this);
 		return entry;
 	}
-	
 
 	/**
 	 * Copy the source entity's data into this object.
 	 * 
-	 * @param entity The Entry of which this object will be come a copy.
+	 * @param entity
+	 *            The Entry of which this object will be come a copy.
 	 */
 	public void copy(ExecutableEntry entity) {
 
@@ -172,27 +177,27 @@ public class ExecutableEntry extends DiscreteEntry {
 			return;
 		}
 
-		//Copy all data members
+		// Copy all data members
 		super.copy(entity);
 		executableUri = entity.executableUri;
-		
-		//Clear the current map
+
+		// Clear the current map
 		allowedValueToURI.clear();
-		
-		//Copy in each value from the other map.
-		for(String value : entity.allowedValueToURI.keySet()){
+
+		// Copy in each value from the other map.
+		for (String value : entity.allowedValueToURI.keySet()) {
 			allowedValueToURI.put(value, allowedValueToURI.get(value));
 		}
-		
+
 		return;
 	}
-	
+
 	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.ice.datastructures.entry.DiscreteEntry#accept(org.eclipse.ice
-	 * .datastructures.entry.IEntryVisitor)
+	 * org.eclipse.january.form.DiscreteEntry#accept(org.eclipse.january.form.
+	 * IEntryVisitor)
 	 */
 	@Override
 	public void accept(IEntryVisitor visitor) {

@@ -35,7 +35,8 @@ public class TestableAbstractEntry extends AbstractEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.AbstractEntry#clone()
+	 * 
+	 * @see org.eclipse.january.form.AbstractEntry#clone()
 	 */
 	@Override
 	public Object clone() {
@@ -44,7 +45,8 @@ public class TestableAbstractEntry extends AbstractEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.AbstractEntry#setValue(java.lang.String[])
+	 * 
+	 * @see org.eclipse.january.form.AbstractEntry#setValue(java.lang.String[])
 	 */
 	@Override
 	public boolean setValue(String... values) {
@@ -53,7 +55,8 @@ public class TestableAbstractEntry extends AbstractEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.AbstractEntry#getAllowedValues()
+	 * 
+	 * @see org.eclipse.january.form.AbstractEntry#getAllowedValues()
 	 */
 	@Override
 	public List<String> getAllowedValues() {
@@ -63,34 +66,50 @@ public class TestableAbstractEntry extends AbstractEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.AbstractEntry#setAllowedValues(java.util.List)
+	 * 
+	 * @see
+	 * org.eclipse.january.form.AbstractEntry#setAllowedValues(java.util.List)
 	 */
 	@Override
 	public void setAllowedValues(List<String> values) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.AbstractEntry#update(org.eclipse.ice.datastructures.JanuaryObject.IUpdateable)
+	 * 
+	 * @see
+	 * org.eclipse.january.form.AbstractEntry#update(org.eclipse.january.form.
+	 * IUpdateable)
 	 */
 	@Override
 	public void update(IUpdateable component) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.january.form.AbstractEntry#getValues()
+	 */
 	@Override
 	public String[] getValues() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.january.form.IEntry#accept(org.eclipse.january.form.
+	 * IEntryVisitor)
+	 */
 	@Override
 	public void accept(IEntryVisitor visitor) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 }

@@ -107,7 +107,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 * Returns true if this is a MatrixComponent representing a square matrix.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         A boolean for determining if a matrix is square or not.
 	 *         </p>
 	 */
@@ -126,7 +127,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 * type is not undefined for this operation to work.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         A value returned representing the row number that was added.
 	 *         </p>
 	 */
@@ -138,8 +140,10 @@ public class MatrixComponent extends JanuaryObject implements Component {
 		}
 
 		// Return if Continuous or Discrete and valueType not set
-		if ((this.valueType == AllowedValueType.Continuous && this.allowedValues == null)
-				|| (this.valueType == AllowedValueType.Discrete && this.allowedValues == null)) {
+		if ((this.valueType == AllowedValueType.Continuous
+				&& this.allowedValues == null)
+				|| (this.valueType == AllowedValueType.Discrete
+						&& this.allowedValues == null)) {
 			return -1;
 		}
 
@@ -175,7 +179,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 *            The allowed value type for MatrixComponent.
 	 *            </p>
 	 */
-	public MatrixComponent(boolean isSquare, AllowedValueType allowedValueType) {
+	public MatrixComponent(boolean isSquare,
+			AllowedValueType allowedValueType) {
 		this.isSquare = isSquare;
 		this.valueType = allowedValueType;
 
@@ -196,7 +201,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 * work.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         A number that represents the index of the row deleted.
 	 *         </p>
 	 */
@@ -212,7 +218,7 @@ public class MatrixComponent extends JanuaryObject implements Component {
 		if (this.valueType == AllowedValueType.Continuous
 				&& this.allowedValues == null
 				|| this.valueType == AllowedValueType.Discrete
-				&& this.allowedValues == null) {
+						&& this.allowedValues == null) {
 			return false;
 		}
 
@@ -259,7 +265,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 * This operation returns the number of rows that are stored in the matrix.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The number of rows.
 	 *         </p>
 	 */
@@ -274,7 +281,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 * matrix.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The number of columns.
 	 *         </p>
 	 */
@@ -308,9 +316,10 @@ public class MatrixComponent extends JanuaryObject implements Component {
 			this.allowedValues = otherMatrixComponent.allowedValues;
 		} else {
 			this.allowedValues = new ArrayList<Double>();
-			for (int i = 0; i < otherMatrixComponent.allowedValues.size(); i++) {
-				this.allowedValues.add(otherMatrixComponent.allowedValues
-						.get(i));
+			for (int i = 0; i < otherMatrixComponent.allowedValues
+					.size(); i++) {
+				this.allowedValues
+						.add(otherMatrixComponent.allowedValues.get(i));
 			}
 		}
 		if (otherMatrixComponent.elements == null) {
@@ -338,7 +347,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 * This operation provides a deep copy of the MatrixComponent.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         A clone of the TableComponent.
 	 *         </p>
 	 */
@@ -361,13 +371,14 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 *            <p>
 	 *            The TableComponent that should be checked for equality.
 	 *            </p>
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         True if the TableComponents are equal, false if not
 	 *         </p>
 	 */
 	@Override
 	public boolean equals(Object otherMatrixComponent) {
-		
+
 		boolean retVal = true;
 		// Check if they are the same reference in memory
 		if (this == otherMatrixComponent) {
@@ -406,7 +417,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 * This operation returns the hashcode value of the MatrixComponent.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The hashcode
 	 *         </p>
 	 */
@@ -465,7 +477,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 * set if the type is not undefined for this operation to work.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         A value returned representing the column number that was added.
 	 *         </p>
 	 */
@@ -477,8 +490,10 @@ public class MatrixComponent extends JanuaryObject implements Component {
 		}
 
 		// Return if Continuous or Discrete and valueType not set
-		if ((this.valueType == AllowedValueType.Continuous && this.allowedValues == null)
-				|| (this.valueType == AllowedValueType.Discrete && this.allowedValues == null)) {
+		if ((this.valueType == AllowedValueType.Continuous
+				&& this.allowedValues == null)
+				|| (this.valueType == AllowedValueType.Discrete
+						&& this.allowedValues == null)) {
 			return -1;
 		}
 
@@ -502,7 +517,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 * for this operation to work.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         A number that represents the index of the column deleted.
 	 *         </p>
 	 */
@@ -515,8 +531,10 @@ public class MatrixComponent extends JanuaryObject implements Component {
 		}
 
 		// Return if Continuous or Discrete and valueType not set
-		if ((this.valueType == AllowedValueType.Continuous && this.allowedValues == null)
-				|| (this.valueType == AllowedValueType.Discrete && this.allowedValues == null)) {
+		if ((this.valueType == AllowedValueType.Continuous
+				&& this.allowedValues == null)
+				|| (this.valueType == AllowedValueType.Discrete
+						&& this.allowedValues == null)) {
 			return false;
 		}
 
@@ -577,7 +595,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 *            <p>
 	 *            The value to be set.
 	 *            </p>
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         Returns true if operation was successful. False otherwise.
 	 *         </p>
 	 */
@@ -601,8 +620,10 @@ public class MatrixComponent extends JanuaryObject implements Component {
 
 		// Return if allowedValueType is not set
 		// Return if Continuous or Discrete and valueType not set
-		if ((this.valueType == AllowedValueType.Continuous && this.allowedValues == null)
-				|| (this.valueType == AllowedValueType.Discrete && this.allowedValues == null)) {
+		if ((this.valueType == AllowedValueType.Continuous
+				&& this.allowedValues == null)
+				|| (this.valueType == AllowedValueType.Discrete
+						&& this.allowedValues == null)) {
 			return false;
 		}
 
@@ -639,7 +660,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 *            <p>
 	 *            The column index.
 	 *            </p>
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The value at rowIndex, colIndex.
 	 *         </p>
 	 */
@@ -657,8 +679,10 @@ public class MatrixComponent extends JanuaryObject implements Component {
 
 		// Return if the valueType is not set correctly
 		// Return if Continuous or Discrete and valueType not set
-		if ((this.valueType == AllowedValueType.Continuous && this.allowedValues == null)
-				|| (this.valueType == AllowedValueType.Discrete && this.allowedValues == null)) {
+		if ((this.valueType == AllowedValueType.Continuous
+				&& this.allowedValues == null)
+				|| (this.valueType == AllowedValueType.Discrete
+						&& this.allowedValues == null)) {
 			return null;
 		}
 
@@ -694,7 +718,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 		// Return if the allowedValues is continuous, but the values passed are
 		// null
 
-		if (values.size() != 2 && this.valueType == AllowedValueType.Continuous) {
+		if (values.size() != 2
+				&& this.valueType == AllowedValueType.Continuous) {
 			return;
 		}
 
@@ -772,7 +797,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 *            <p>
 	 *            The index of the row.
 	 *            </p>
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         An arraylist of a row at index.
 	 *         </p>
 	 */
@@ -809,7 +835,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 *            <p>
 	 *            The column index.
 	 *            </p>
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         An arraylist of columns.
 	 *         </p>
 	 */
@@ -956,7 +983,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 * Returns true if the matrix can be resized. False otherwise.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         A boolean to determine resizable attribute.
 	 *         </p>
 	 */
@@ -989,7 +1017,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 * Returns the January's AllowedValueType. If this is not set, returns null.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         An ArrayList of doubles.
 	 *         </p>
 	 */
@@ -1005,7 +1034,8 @@ public class MatrixComponent extends JanuaryObject implements Component {
 	 * undefined or not set, returns null.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         An AllowedValueType.
 	 *         </p>
 	 */
@@ -1027,7 +1057,9 @@ public class MatrixComponent extends JanuaryObject implements Component {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.JanuaryObject.JanuaryObject#update(java.lang.String, java.lang.String)
+	 * 
+	 * @see org.eclipse.january.form.JanuaryObject#update(java.lang.String,
+	 * java.lang.String)
 	 */
 	@Override
 	public void update(String updatedKey, String newValue) {
