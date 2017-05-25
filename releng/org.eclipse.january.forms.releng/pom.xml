@@ -14,7 +14,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.eclipse.january</groupId>
-	<artifactId>org.eclipse.january.releng</artifactId>
+	<artifactId>org.eclipse.january.forms.releng</artifactId>
 	<version>2.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
@@ -64,7 +64,7 @@
 					<target>
 						<artifact>
 							<groupId>org.eclipse.january</groupId>
-							<artifactId>org.eclipse.january.releng.target</artifactId>
+							<artifactId>org.eclipse.january.forms.releng.target</artifactId>
 							<version>2.1.0-SNAPSHOT</version>
 						</artifact>
 					</target>
@@ -199,8 +199,8 @@
 		<module>../../org.eclipse.january.geometry.dsl.vtk.tests</module>
 
 		<!-- releng -->
-		<module>../org.eclipse.january.releng.target</module>
-		<module>../org.eclipse.january.releng.p2</module>
+		<module>../org.eclipse.january.forms.releng.target</module>
+		<module>../org.eclipse.january.forms.releng.p2</module>
 	</modules>
 
 
