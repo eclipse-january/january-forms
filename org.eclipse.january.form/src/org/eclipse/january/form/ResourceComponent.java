@@ -19,10 +19,10 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * The ResourceComponent is a specialization of ListComponent that is used to
- * manage a set of JanuaryResources. It is used, for example, to collect Resources
- * for output data on a Form. JanuaryResources can be very easily added to
- * ResourceComponents by calling the addResource() operation and the whole list
- * of managed JanuaryResources can be retrieved with getResources().
+ * manage a set of JanuaryResources. It is used, for example, to collect
+ * Resources for output data on a Form. JanuaryResources can be very easily
+ * added to ResourceComponents by calling the addResource() operation and the
+ * whole list of managed JanuaryResources can be retrieved with getResources().
  *
  *
  * 
@@ -100,14 +100,15 @@ public class ResourceComponent extends ListComponent<JanuaryResource> {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.JanuaryObject.ListComponent#hashCode()
+	 * 
+	 * @see org.eclipse.january.form.ListComponent#hashCode()
 	 */
 	@Override
 	public int hashCode() {
 		return super.hashCode();
-		
+
 	}
-	
+
 	/**
 	 * This operation is used to check equality between the ResourceComponent
 	 * and another ResourceComponent. It returns true if the Components are

@@ -19,11 +19,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
- * The ContinuousEntry is a DiscreteEntry that requires clients 
- * to set exactly 2 allowed values: the lower bound and upper bound of a 
- * range of continuous values that this IEntry stores. For example, setting 
- * 0 and 5 as the allowed values for this IEntry will allow clients to set this 
- * IEntry's value to anything between 0 and 5. 
+ * The ContinuousEntry is a DiscreteEntry that requires clients to set exactly 2
+ * allowed values: the lower bound and upper bound of a range of continuous
+ * values that this IEntry stores. For example, setting 0 and 5 as the allowed
+ * values for this IEntry will allow clients to set this IEntry's value to
+ * anything between 0 and 5.
  * 
  * @author Alex McCaskey
  *
@@ -38,7 +38,8 @@ public class ContinuousEntry extends DiscreteEntry {
 	 */
 	@XmlTransient
 	protected String continuousErrMsg = "'${incorrectValue}' is an "
-			+ "unacceptable value. The value must be between ${lowerBound} " + "and ${upperBound}.";
+			+ "unacceptable value. The value must be between ${lowerBound} "
+			+ "and ${upperBound}.";
 
 	/**
 	 * The constructor
@@ -46,23 +47,26 @@ public class ContinuousEntry extends DiscreteEntry {
 	public ContinuousEntry() {
 		super();
 	}
-	
+
 	/**
 	 * Convenience constructor
+	 * 
 	 * @param allowed
 	 */
 	public ContinuousEntry(String... allowed) {
 		super(allowed);
 		if (allowed.length > 2) {
-			throw new IllegalArgumentException("ContinuousEntry must be constructed "
-					+ "with exactly 2 allowed values: the lower and upper bound of "
-					+ "the range.");
+			throw new IllegalArgumentException(
+					"ContinuousEntry must be constructed "
+							+ "with exactly 2 allowed values: the lower and upper bound of "
+							+ "the range.");
 		}
 	}
-	
+
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.DiscreteEntry#clone()
+	 * 
+	 * @see org.eclipse.january.form.DiscreteEntry#clone()
 	 */
 	@Override
 	public Object clone() {
@@ -73,7 +77,8 @@ public class ContinuousEntry extends DiscreteEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.DiscreteEntry#setValue(java.lang.String)
+	 * 
+	 * @see org.eclipse.january.form.DiscreteEntry#setValue(java.lang.String)
 	 */
 	@Override
 	public boolean setValue(String newValue) {
@@ -90,40 +95,51 @@ public class ContinuousEntry extends DiscreteEntry {
 			} catch (NumberFormatException | NullPointerException e) {
 				// Replace the default error values with the ones for this Entry
 				String error = continuousErrMsg;
-				error = error.replace("${incorrectValue}", newValue != null ? newValue : "null");
-				error = error.replace("${lowerBound}", getAllowedValues().get(0));
-				error = error.replace("${upperBound}", getAllowedValues().get(1));
+				error = error.replace("${incorrectValue}",
+						newValue != null ? newValue : "null");
+				error = error.replace("${lowerBound}",
+						getAllowedValues().get(0));
+				error = error.replace("${upperBound}",
+						getAllowedValues().get(1));
 				this.errorMessage = error;
 				return false;
 			}
 			// Set the value if it is within the bounds
 			if (newValueDouble != null
-					&& (newValueDouble.compareTo(lowerBound) != -1 && newValueDouble.compareTo(upperBound) != 1)) {
+					&& (newValueDouble.compareTo(lowerBound) != -1
+							&& newValueDouble.compareTo(upperBound) != 1)) {
 				this.value = newValue;
 				errorMessage = null;
 				return true;
 			} else {
 				// Replace the default error values with the ones for this Entry
 				String error = continuousErrMsg;
-				error = error.replace("${incorrectValue}", newValue != null ? newValue : "null");
-				error = error.replace("${lowerBound}", getAllowedValues().get(0));
-				error = error.replace("${upperBound}", getAllowedValues().get(1));
+				error = error.replace("${incorrectValue}",
+						newValue != null ? newValue : "null");
+				error = error.replace("${lowerBound}",
+						getAllowedValues().get(0));
+				error = error.replace("${upperBound}",
+						getAllowedValues().get(1));
 				this.errorMessage = error;
 				return false;
 			}
 		}
-	
-		logger.info("ContinuousEntry must be initialized with an allowedValue list of size 2: the lower bound at index 0 and the upper bound at index 1.");
+
+		logger.info(
+				"ContinuousEntry must be initialized with an allowedValue list of size 2: the lower bound at index 0 and the upper bound at index 1.");
 		return false;
 	}
-	
+
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.DiscreteEntry#accept(org.eclipse.ice.datastructures.entry.IEntryVisitor)
+	 * 
+	 * @see
+	 * org.eclipse.january.form.DiscreteEntry#accept(org.eclipse.january.form.
+	 * IEntryVisitor)
 	 */
 	@Override
 	public void accept(IEntryVisitor visitor) {
 		visitor.visit(this);
 	}
-	
+
 }

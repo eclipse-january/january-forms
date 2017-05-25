@@ -30,7 +30,7 @@ public class OBJGeometryImporterService implements IGeometryImporterService {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.eavp.viz.service.geometry.importers.IGeometryImporterService#
+	 * org.eclipse.january.geometry.model.importer.IGeometryImporterService#
 	 * getName()
 	 */
 	@Override
@@ -42,7 +42,7 @@ public class OBJGeometryImporterService implements IGeometryImporterService {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.eavp.viz.service.geometry.importers.IGeometryImporterService#
+	 * org.eclipse.january.geometry.model.importer.IGeometryImporterService#
 	 * importFile(java.nio.file.Path)
 	 */
 	@Override
@@ -54,7 +54,7 @@ public class OBJGeometryImporterService implements IGeometryImporterService {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.eavp.viz.service.geometry.importers.IGeometryImporterService#
+	 * org.eclipse.january.geometry.model.importer.IGeometryImporterService#
 	 * getSupportedExtensions()
 	 */
 	@Override

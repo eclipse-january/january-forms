@@ -20,9 +20,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * The StringEntry is an AbstractEntry that only contains an 
- * undefined, String-valued value. It does not allow clients to set 
- * multiple values or specify allowed values.  
+ * The StringEntry is an AbstractEntry that only contains an undefined,
+ * String-valued value. It does not allow clients to set multiple values or
+ * specify allowed values.
  * 
  * @author Alex McCaskey
  *
@@ -34,10 +34,11 @@ public class StringEntry extends AbstractEntry {
 	public StringEntry() {
 		super();
 	}
-	
+
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.AbstractEntry#clone()
+	 * 
+	 * @see org.eclipse.january.form.AbstractEntry#clone()
 	 */
 	@Override
 	public Object clone() {
@@ -48,7 +49,8 @@ public class StringEntry extends AbstractEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.AbstractEntry#setValue(java.lang.String[])
+	 * 
+	 * @see org.eclipse.january.form.AbstractEntry#setValue(java.lang.String[])
 	 */
 	@Override
 	public boolean setValue(String... values) {
@@ -59,42 +61,52 @@ public class StringEntry extends AbstractEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.AbstractEntry#getValues()
+	 * 
+	 * @see org.eclipse.january.form.AbstractEntry#getValues()
 	 */
 	@Override
 	public String[] getValues() {
-		throw new UnsupportedOperationException(
-				"Discrete only supports " + "the storage of one String value, not many, selected from "
-						+ "a list of allowed values. " + "Therefore, this operation is not supported.");
+		throw new UnsupportedOperationException("Discrete only supports "
+				+ "the storage of one String value, not many, selected from "
+				+ "a list of allowed values. "
+				+ "Therefore, this operation is not supported.");
 
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.AbstractEntry#getAllowedValues()
+	 * 
+	 * @see org.eclipse.january.form.AbstractEntry#getAllowedValues()
 	 */
 	@Override
 	public List<String> getAllowedValues() {
-		throw new UnsupportedOperationException("StringEntry allows any String to "
-				+ "be entered as the value. There are no allowed values. Therefore this "
-				+ "operation is not supported.");
+		throw new UnsupportedOperationException(
+				"StringEntry allows any String to "
+						+ "be entered as the value. There are no allowed values. Therefore this "
+						+ "operation is not supported.");
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.AbstractEntry#setAllowedValues(java.util.List)
+	 * 
+	 * @see
+	 * org.eclipse.january.form.AbstractEntry#setAllowedValues(java.util.List)
 	 */
 	@Override
 	public void setAllowedValues(List<String> values) {
-		throw new UnsupportedOperationException("StringEntry allows any String to "
-				+ "be entered as the value. There are no allowed values. Therefore this "
-				+ "operation is not supported.");
+		throw new UnsupportedOperationException(
+				"StringEntry allows any String to "
+						+ "be entered as the value. There are no allowed values. Therefore this "
+						+ "operation is not supported.");
 
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.AbstractEntry#update(org.eclipse.ice.datastructures.JanuaryObject.IUpdateable)
+	 * 
+	 * @see
+	 * org.eclipse.january.form.AbstractEntry#update(org.eclipse.january.form.
+	 * IUpdateable)
 	 */
 	@Override
 	public void update(IUpdateable component) {
@@ -103,7 +115,9 @@ public class StringEntry extends AbstractEntry {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.entry.IEntry#accept(org.eclipse.ice.datastructures.entry.IEntryVisitor)
+	 * 
+	 * @see org.eclipse.january.form.IEntry#accept(org.eclipse.january.form.
+	 * IEntryVisitor)
 	 */
 	@Override
 	public void accept(IEntryVisitor visitor) {

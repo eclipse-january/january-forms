@@ -26,10 +26,10 @@ import java.util.ArrayList;
 
 import javax.xml.bind.JAXBException;
 
+import org.eclipse.january.form.IElementSource;
 import org.eclipse.january.form.JanuaryJAXBHandler;
 import org.eclipse.january.form.JanuaryObject;
 import org.eclipse.january.form.JanuaryResource;
-import org.eclipse.january.form.IElementSource;
 import org.eclipse.january.form.ListComponent;
 import org.eclipse.january.form.SelectiveComponentVisitor;
 import org.eclipse.january.form.VizResource;
@@ -544,8 +544,7 @@ public class ListComponentTester implements IElementSource<Integer>,
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see
-	 * org.eclipse.ice.datastructures.JanuaryObject.IElementSource#getElements()
+	 * @see org.eclipse.january.form.IElementSource#getElements()
 	 */
 	@Override
 	public EventList<Integer> getElements() {
@@ -555,8 +554,7 @@ public class ListComponentTester implements IElementSource<Integer>,
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see
-	 * org.eclipse.ice.datastructures.JanuaryObject.IElementSource#getTableFormat()
+	 * @see org.eclipse.january.form.IElementSource#getTableFormat()
 	 */
 	@Override
 	public TableFormat<Integer> getTableFormat() {

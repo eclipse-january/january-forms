@@ -35,9 +35,9 @@ import ca.odell.glazedlists.gui.WritableTableFormat;
  * Collections in a class that realizes January's additional requirements for
  * persistence, unique identification, and notifications.
  * <p>
- * It implements the Component to match up with the January requirements and extends
- * the TransformedList from GlazedLists to provide the generic, observable list
- * capabilities.
+ * It implements the Component to match up with the January requirements and
+ * extends the TransformedList from GlazedLists to provide the generic,
+ * observable list capabilities.
  * </p>
  * <p>
  * It can be configured to provide a handle to an IElementSource that will
@@ -549,7 +549,7 @@ public class ListComponent<T> extends TransformedList<T, T>
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.eclipse.ice.datastructures.JanuaryObject.Identifiable#getContext()
+	 * @see org.eclipse.january.form.Identifiable#getContext()
 	 */
 	@Override
 	public String getContext() {
@@ -559,9 +559,7 @@ public class ListComponent<T> extends TransformedList<T, T>
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see
-	 * org.eclipse.ice.datastructures.JanuaryObject.Identifiable#setContext(java.
-	 * lang.String)
+	 * @see org.eclipse.january.form.Identifiable#setContext(java.lang.String)
 	 */
 	@Override
 	public void setContext(String context) {

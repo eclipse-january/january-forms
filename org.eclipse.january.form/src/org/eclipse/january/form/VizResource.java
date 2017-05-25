@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * 
  */
 @XmlRootElement(name = "VizResource")
-public class VizResource extends JanuaryResource{
+public class VizResource extends JanuaryResource {
 
 	/**
 	 * The set of files contained associated with this resource
@@ -97,15 +97,20 @@ public class VizResource extends JanuaryResource{
 
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.resource.IVizResource#getChildrenResources()
+	/**
+	 * Return any possible children VizResources.
+	 * 
+	 * @return A list containing child viz resources.
 	 */
 	public ArrayList<VizResource> getChildrenResources() {
 		return childrenResources;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.resource.IVizResource#setFileSet(java.lang.String[])
+	/**
+	 * Mutator for the file set
+	 * 
+	 * @param fileSet
+	 *            The list of file names to add to the file set
 	 */
 	public void setFileSet(String[] fileSet) {
 		for (String i : fileSet)
@@ -113,44 +118,60 @@ public class VizResource extends JanuaryResource{
 		this.fileSet = fileSet;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.resource.IVizResource#setFileSetTitle(java.lang.String)
+	/**
+	 * Set the fileSetTitle
+	 * 
+	 * @param title
+	 *            The String to use as the file set ID
 	 */
 	public void setFileSetTitle(String title) {
 		fileSetTitle = title;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.resource.IVizResource#getFileSet()
+	/**
+	 * Accessor for the file set
+	 * 
+	 * @return The list of file names in the file set
 	 */
+
 	public String[] getFileSet() {
 		return this.fileSet;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.resource.IVizResource#getFileSetTitle()
+	/**
+	 * Accessor for the file set's title
+	 * 
+	 * @return The title used to identify the file set
 	 */
 	public String getFileSetTitle() {
 		return this.fileSetTitle;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.resource.IVizResource#setHost(java.lang.String)
+	/**
+	 * Set the remote file flag
+	 * 
+	 * @param name
+	 *            The new name of the host. If local, use "localhost". Any other
+	 *            hostname will be treated as remote.
 	 */
 	public void setHost(String name) {
 		host = name;
 		return;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.resource.IVizResource#getHost()
+	/**
+	 * Retrieve the name of the host for this file.
+	 * 
+	 * @return The String for the name of the host machine.
 	 */
 	public String getHost() {
 		return host;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.resource.IVizResource#isRemote()
+	/**
+	 * Retrieve the flag signifying if this file is on a remote machine or not.
+	 * 
+	 * @return True if this resource is on a remote machine; false otherwise
 	 */
 	public boolean isRemote() {
 		return !"localhost".equals(host);
@@ -224,8 +245,12 @@ public class VizResource extends JanuaryResource{
 
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.resource.IVizResource#copy(org.eclipse.ice.datastructures.resource.VizResource)
+	/**
+	 * This operation performs a deep copy of the attributes of another
+	 * VizResource into the current VizResource.
+	 * 
+	 * @param otherResource
+	 *            The other VizResource from which information should be copied.
 	 */
 	public void copy(VizResource otherResource) {
 

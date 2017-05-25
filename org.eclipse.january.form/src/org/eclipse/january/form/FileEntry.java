@@ -41,7 +41,8 @@ import org.eclipse.core.runtime.CoreException;
  */
 @XmlRootElement(name = "FileEntry")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class FileEntry extends DiscreteEntry implements IResourceChangeListener {
+public class FileEntry extends DiscreteEntry
+		implements IResourceChangeListener {
 
 	/**
 	 * Reference to the selected file.
@@ -95,7 +96,7 @@ public class FileEntry extends DiscreteEntry implements IResourceChangeListener 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.eclipse.ice.datastructures.entry.DiscreteEntry#clone()
+	 * @see org.eclipse.january.form.DiscreteEntry#clone()
 	 */
 	@Override
 	public Object clone() {
@@ -116,16 +117,15 @@ public class FileEntry extends DiscreteEntry implements IResourceChangeListener 
 			project = projectSpace;
 			generateAllowedValues();
 			isModified = true;
-			ResourcesPlugin.getWorkspace().addResourceChangeListener(this, IResourceChangeEvent.POST_CHANGE);
+			ResourcesPlugin.getWorkspace().addResourceChangeListener(this,
+					IResourceChangeEvent.POST_CHANGE);
 		}
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see
-	 * org.eclipse.ice.datastructures.entry.DiscreteEntry#setValue(java.lang.
-	 * String)
+	 * @see org.eclipse.january.form.DiscreteEntry#setValue(java.lang.String)
 	 */
 	@Override
 	public boolean setValue(String newValue) {
@@ -157,15 +157,14 @@ public class FileEntry extends DiscreteEntry implements IResourceChangeListener 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see
-	 * org.eclipse.ice.datastructures.entry.DiscreteEntry#setValue(java.lang.
-	 * String[])
+	 * @see org.eclipse.january.form.DiscreteEntry#setValue(java.lang.String[])
 	 */
 	@Override
 	public boolean setValue(String... values) {
-		throw new UnsupportedOperationException(
-				"FileEntry only supports " + "the storage of one String value, not many, selected from "
-						+ "a list of files in the IProject space. " + "Therefore, this operation is not supported.");
+		throw new UnsupportedOperationException("FileEntry only supports "
+				+ "the storage of one String value, not many, selected from "
+				+ "a list of files in the IProject space. "
+				+ "Therefore, this operation is not supported.");
 
 	}
 
@@ -186,7 +185,8 @@ public class FileEntry extends DiscreteEntry implements IResourceChangeListener 
 				IResource[] resources = project.members();
 				for (int i = 0; i < resources.length; i++) {
 					// Only load files, not directories
-					if (resources[i].getType() == IResource.FILE && !resources[i].getName().startsWith(".")) {
+					if (resources[i].getType() == IResource.FILE
+							&& !resources[i].getName().startsWith(".")) {
 						allFiles.add(resources[i].getName());
 					}
 				}
@@ -209,7 +209,8 @@ public class FileEntry extends DiscreteEntry implements IResourceChangeListener 
 				}
 			} catch (CoreException e) {
 				// Complain
-				logger.info("FileEntry Message: " + "Unable to load project files!");
+				logger.info("FileEntry Message: "
+						+ "Unable to load project files!");
 				logger.error(getClass().getName() + " Exception!", e);
 			}
 		}
@@ -259,7 +260,7 @@ public class FileEntry extends DiscreteEntry implements IResourceChangeListener 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.eclipse.ice.datastructures.entry.AbstractEntry#hashCode()
+	 * @see org.eclipse.january.form.DiscreteEntry#hashCode()
 	 */
 	@Override
 	public int hashCode() {
@@ -278,8 +279,8 @@ public class FileEntry extends DiscreteEntry implements IResourceChangeListener 
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.ice.datastructures.entry.DiscreteEntry#accept(org.eclipse.ice
-	 * .datastructures.entry.IEntryVisitor)
+	 * org.eclipse.january.form.DiscreteEntry#accept(org.eclipse.january.form.
+	 * IEntryVisitor)
 	 */
 	@Override
 	public void accept(IEntryVisitor visitor) {
@@ -299,9 +300,12 @@ public class FileEntry extends DiscreteEntry implements IResourceChangeListener 
 			if (event.getType() == IResourceChangeEvent.POST_CHANGE) {
 				try {
 					event.getDelta().accept(new IResourceDeltaVisitor() {
-						public boolean visit(IResourceDelta delta) throws CoreException {
+						@Override
+						public boolean visit(IResourceDelta delta)
+								throws CoreException {
 							IProject p = delta.getResource().getProject();
-							if (p != null && p.getName().equals(project.getName())) {
+							if (p != null
+									&& p.getName().equals(project.getName())) {
 								generateAllowedValues();
 								notifyListeners();
 							}

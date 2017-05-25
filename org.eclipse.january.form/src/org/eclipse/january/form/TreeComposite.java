@@ -31,11 +31,11 @@ import org.eclipse.january.form.emf.EMFComponent;
 
 /**
  * The TreeComposite realizes the Composite interface to provide a multi-level
- * hierarchical tree of January Components. TreeComposites are n-ary trees, meaning
- * that they can have any number of children and data per node. A "sibling" is a
- * TreeComposite on the same level of the tree as the current TreeComposite and
- * a "child" is a subordinate TreeComposite contained in the set managed by the
- * current TreeComposite.
+ * hierarchical tree of January Components. TreeComposites are n-ary trees,
+ * meaning that they can have any number of children and data per node. A
+ * "sibling" is a TreeComposite on the same level of the tree as the current
+ * TreeComposite and a "child" is a subordinate TreeComposite contained in the
+ * set managed by the current TreeComposite.
  * </p>
  * <p>
  * When a Component is added to a TreeComposite (keep in mind Composites are
@@ -300,7 +300,7 @@ public class TreeComposite extends JanuaryObject
 	 * </p>
 	 * 
 	 * @return
-	 * 		<p>
+	 *         <p>
 	 *         The parent node.
 	 *         </p>
 	 */
@@ -314,7 +314,7 @@ public class TreeComposite extends JanuaryObject
 	 * </p>
 	 * 
 	 * @return
-	 * 		<p>
+	 *         <p>
 	 *         The next child in the set of child TreeComposites or null if the
 	 *         end of the set has been reached.
 	 *         </p>
@@ -417,7 +417,7 @@ public class TreeComposite extends JanuaryObject
 	 * </p>
 	 * 
 	 * @return
-	 * 		<p>
+	 *         <p>
 	 *         The previous child in the set of child TreeComposites or null if
 	 *         the iterator has returned to the beginning of the set.
 	 *         </p>
@@ -524,7 +524,7 @@ public class TreeComposite extends JanuaryObject
 	 *            The index at which the desired child can be found.
 	 *            </p>
 	 * @return
-	 * 		<p>
+	 *         <p>
 	 *         The child or null if the index is out of bounds.
 	 *         </p>
 	 */
@@ -545,7 +545,7 @@ public class TreeComposite extends JanuaryObject
 	 * </p>
 	 * 
 	 * @return
-	 * 		<p>
+	 *         <p>
 	 *         The next or "nearest right" sibling in the tree.
 	 *         </p>
 	 */
@@ -560,7 +560,7 @@ public class TreeComposite extends JanuaryObject
 	 * </p>
 	 * 
 	 * @return
-	 * 		<p>
+	 *         <p>
 	 *         The previous or "nearest left" sibling in the tree.
 	 *         </p>
 	 */
@@ -577,7 +577,7 @@ public class TreeComposite extends JanuaryObject
 	 * </p>
 	 * 
 	 * @return
-	 * 		<p>
+	 *         <p>
 	 *         The set of Components managed by the TreeComposite.
 	 *         </p>
 	 */
@@ -604,7 +604,7 @@ public class TreeComposite extends JanuaryObject
 	 * </p>
 	 * 
 	 * @return
-	 * 		<p>
+	 *         <p>
 	 *         The active data node or null if it has not been specified.
 	 *         </p>
 	 */
@@ -685,7 +685,7 @@ public class TreeComposite extends JanuaryObject
 	 *            compared.
 	 *            </p>
 	 * @return
-	 * 		<p>
+	 *         <p>
 	 *         True if the TreeComposites are equal, false otherwise.
 	 *         </p>
 	 */
@@ -731,7 +731,7 @@ public class TreeComposite extends JanuaryObject
 	 * </p>
 	 * 
 	 * @return
-	 * 		<p>
+	 *         <p>
 	 *         The hashcode.
 	 *         </p>
 	 */
@@ -899,7 +899,7 @@ public class TreeComposite extends JanuaryObject
 	 * </p>
 	 * 
 	 * @return
-	 * 		<p>
+	 *         <p>
 	 *         The deep-copy clone of this TreeComposite.
 	 *         </p>
 	 */
@@ -983,7 +983,7 @@ public class TreeComposite extends JanuaryObject
 	 * </p>
 	 * 
 	 * @return
-	 * 		<p>
+	 *         <p>
 	 *         The set of exemplar child types ("set of exemplars").
 	 *         </p>
 	 */
@@ -1001,7 +1001,7 @@ public class TreeComposite extends JanuaryObject
 	 * </p>
 	 * 
 	 * @return
-	 * 		<p>
+	 *         <p>
 	 *         True if the exemplars exist, false otherwise.
 	 *         </p>
 	 */
@@ -1016,7 +1016,7 @@ public class TreeComposite extends JanuaryObject
 	 * </p>
 	 * 
 	 * @return
-	 * 		<p>
+	 *         <p>
 	 *         True if Active, false if not
 	 *         </p>
 	 */
@@ -1338,8 +1338,8 @@ public class TreeComposite extends JanuaryObject
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.ice.datastructures.componentVisitor.IComponentVisitor#visit
-	 * (org.eclipse.ice.datastructures.form.TimeDataComponent)
+	 * org.eclipse.january.form.IComponentVisitor#visit(org.eclipse.january.form
+	 * .TimeDataComponent)
 	 */
 	@Override
 	public void visit(TimeDataComponent component) {
@@ -1413,12 +1413,26 @@ public class TreeComposite extends JanuaryObject
 		return;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.eclipse.january.form.IComponentVisitor#visit(org.eclipse.january.form
+	 * .emf.EMFComponent)
+	 */
 	@Override
 	public void visit(EMFComponent component) {
 		// TODO Auto-generated method stub
 
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.eclipse.january.form.IComponentVisitor#visit(org.eclipse.january.form
+	 * .ListComponent)
+	 */
 	@Override
 	public void visit(ListComponent component) {
 		// TODO Auto-generated method stub

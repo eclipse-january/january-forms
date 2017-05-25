@@ -54,8 +54,8 @@ public class GeometryComponent extends JanuaryObject
 
 	/**
 	 * <p>
-	 * This operation overrides the JanuaryObject.setName() operation and provides
-	 * an update notification in addition to setting the name.
+	 * This operation overrides the JanuaryObject.setName() operation and
+	 * provides an update notification in addition to setting the name.
 	 * </p>
 	 *
 	 * @param name
@@ -76,8 +76,8 @@ public class GeometryComponent extends JanuaryObject
 
 	/**
 	 * <p>
-	 * This operation overrides the JanuaryObject.setId() operation and provides an
-	 * update notification in addition to setting the id.
+	 * This operation overrides the JanuaryObject.setId() operation and provides
+	 * an update notification in addition to setting the id.
 	 * </p>
 	 *
 	 * @param id
@@ -346,10 +346,10 @@ public class GeometryComponent extends JanuaryObject
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see
-	 * org.eclipse.ice.datastructures.JanuaryObject.IUpdateableListener#update(org.
-	 * eclipse.ice.datastructures.JanuaryObject.IUpdateable)
+	 * org.eclipse.january.form.IUpdateableListener#update(org.eclipse.january.
+	 * form.IUpdateable)
 	 */
 	@Override
 	public void update(IUpdateable component) {

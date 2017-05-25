@@ -27,9 +27,8 @@ public class FakeJAXBClassProvider implements IJAXBClassProvider {
 
 	/*
 	 * (non-Javadoc)
-	 *
-	 * @see org.eclipse.ice.datastructures.jaxbclassprovider.IJAXBClassProvider#
-	 * getClasses()
+	 * 
+	 * @see org.eclipse.january.form.IJAXBClassProvider#getClasses()
 	 */
 	@Override
 	public List<Class> getClasses() {
@@ -40,9 +39,8 @@ public class FakeJAXBClassProvider implements IJAXBClassProvider {
 
 	/*
 	 * (non-Javadoc)
-	 *
-	 * @see org.eclipse.ice.datastructures.jaxbclassprovider.IJAXBClassProvider#
-	 * getProviderName()
+	 * 
+	 * @see org.eclipse.january.form.IJAXBClassProvider#getProviderName()
 	 */
 	@Override
 	public String getProviderName() {

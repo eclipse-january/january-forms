@@ -20,7 +20,7 @@
 		<artifactId>org.eclipse.january.forms.releng</artifactId>
 		<version>2.1.0-SNAPSHOT</version>
 	</parent>
-	<groupId>org.eclipse.eavp</groupId>
+	<groupId>org.eclipse.january</groupId>
 	<artifactId>org.eclipse.january.geometry.dsl.vtk</artifactId>
 	<packaging>eclipse-plugin</packaging>
 

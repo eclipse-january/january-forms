@@ -36,8 +36,8 @@ import java.util.Queue;
  * @author Jordan H. Deyton
  * 
  */
-public class BreadthFirstTreeCompositeIterator extends
-		AbstractTreeCompositeIterator {
+public class BreadthFirstTreeCompositeIterator
+		extends AbstractTreeCompositeIterator {
 
 	/**
 	 * A queue used to maintain state information about the position of the
@@ -81,7 +81,7 @@ public class BreadthFirstTreeCompositeIterator extends
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.eclipse.ice.datastructures.form.TreeCompositeIterator#hasNext()
+	 * @see org.eclipse.january.form.AbstractTreeCompositeIterator#hasNext()
 	 */
 	@Override
 	public boolean hasNext() {
@@ -91,7 +91,7 @@ public class BreadthFirstTreeCompositeIterator extends
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.eclipse.ice.datastructures.form.TreeCompositeIterator#next()
+	 * @see org.eclipse.january.form.AbstractTreeCompositeIterator#next()
 	 */
 	@Override
 	public TreeComposite next() {

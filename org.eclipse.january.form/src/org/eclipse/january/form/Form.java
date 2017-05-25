@@ -56,7 +56,7 @@ public class Form extends JanuaryObject implements Composite {
 	 * 
 	 */
 	@XmlElementWrapper
-	@XmlAnyElement(lax=true)
+	@XmlAnyElement(lax = true)
 	private ArrayList<Component> componentList;
 
 	/**
@@ -105,7 +105,8 @@ public class Form extends JanuaryObject implements Composite {
 	 * Form.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The unique ID of the Item that the Form represents.
 	 *         </p>
 	 */
@@ -134,7 +135,8 @@ public class Form extends JanuaryObject implements Composite {
 	 * the Form.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The list of Actions that can be performed for this Form when it
 	 *         is processed or null if no such list was provided.
 	 *         </p>
@@ -169,7 +171,8 @@ public class Form extends JanuaryObject implements Composite {
 	 * processed.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         True if the Form is complete, valid and can be processed.
 	 *         </p>
 	 */
@@ -206,7 +209,8 @@ public class Form extends JanuaryObject implements Composite {
 	 *            <p>
 	 *            The other Form to which this Form should be compared.
 	 *            </p>
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         True if the Forms are equal, false otherwise.
 	 *         </p>
 	 */
@@ -273,7 +277,8 @@ public class Form extends JanuaryObject implements Composite {
 	 * This operation returns the hashcode value of the Form.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The hashcode of the Form.
 	 *         </p>
 	 */
@@ -308,7 +313,8 @@ public class Form extends JanuaryObject implements Composite {
 	 * This operation provides a deep copy of the Form.
 	 * </p>
 	 * 
-	 * @return <p>
+	 * @return
+	 *         <p>
 	 *         The deep-copy clone of this Form.
 	 *         </p>
 	 */
@@ -378,7 +384,9 @@ public class Form extends JanuaryObject implements Composite {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ice.datastructures.JanuaryObject.JanuaryObject#update(java.lang.String, java.lang.String)
+	 * 
+	 * @see org.eclipse.january.form.JanuaryObject#update(java.lang.String,
+	 * java.lang.String)
 	 */
 	@Override
 	public void update(String updatedKey, String newValue) {
@@ -416,8 +424,8 @@ public class Form extends JanuaryObject implements Composite {
 			notifyListeners();
 		} else {
 			// Otherwise throw an error exception
-			throw new RuntimeException("Data components in Forms "
-					+ " cannot be null.");
+			throw new RuntimeException(
+					"Data components in Forms " + " cannot be null.");
 		}
 
 		return;

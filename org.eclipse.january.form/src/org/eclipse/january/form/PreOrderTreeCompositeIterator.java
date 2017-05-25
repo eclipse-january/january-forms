@@ -35,8 +35,8 @@ import java.util.Stack;
  * @author Jordan H. Deyton
  * 
  */
-public class PreOrderTreeCompositeIterator extends
-		AbstractTreeCompositeIterator {
+public class PreOrderTreeCompositeIterator
+		extends AbstractTreeCompositeIterator {
 
 	/**
 	 * A stack used to maintain state information about the position of the
@@ -80,7 +80,7 @@ public class PreOrderTreeCompositeIterator extends
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.eclipse.ice.datastructures.form.TreeCompositeIterator#hasNext()
+	 * @see org.eclipse.january.form.AbstractTreeCompositeIterator#hasNext()
 	 */
 	@Override
 	public boolean hasNext() {
@@ -90,7 +90,7 @@ public class PreOrderTreeCompositeIterator extends
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.eclipse.ice.datastructures.form.TreeCompositeIterator#next()
+	 * @see org.eclipse.january.form.AbstractTreeCompositeIterator#next()
 	 */
 	@Override
 	public TreeComposite next() {
